@@ -52,4 +52,8 @@ const (
 
 	*/
 	ACTORS_KEY_PREFIX = "/xjgw/actors/"
+
+	// save block height number
+	// /xjgw/height/t02112/72156 => 1
+	BLOCK_HEIGHT_PREFIX = "/xjgw/height/"
 )
