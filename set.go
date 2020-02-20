@@ -95,11 +95,20 @@ func (s *SetInfo) run() {
 }
 
 func (s *SetInfo) Add(h uint64) (err error) {
+	if h <= 0 {
+		return errors.New("height value must bigger than 0.")
+	}
 	s.Lock()
 	defer s.Unlock()
 	s.set.Add(h)
 	s.c <- h
 	return
+}
+
+func (s *SetInfo) Contains(h uint64) bool {
+	s.RLock()
+	defer s.RUnlock()
+	return s.set.Contains(h)
 }
 
 func (s *SetInfo) put(height uint64) (err error) {
