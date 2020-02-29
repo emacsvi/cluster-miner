@@ -56,4 +56,6 @@ const (
 	// save block height number
 	// /xjgw/height/t02112/72156 => 1
 	BLOCK_HEIGHT_PREFIX = "/xjgw/height/"
+	KVSTORE_PREFIX      = "/xjgw/kvstore/"
+	COMMP_PREFIX        = "/xjgw/kvstore/commp/"
 )

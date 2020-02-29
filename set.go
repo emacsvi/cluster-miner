@@ -122,7 +122,7 @@ func (s *SetInfo) put(height uint64) (err error) {
 		return
 	}
 
-	log.Printf("success save to etcd [%s]=%s\n", key, "1")
+	// log.Printf("success save to etcd [%s]=%s\n", key, "1")
 
 	if putResp.PrevKv != nil {
 		log.Println("error while put height :", height, " and k-v: ", string(putResp.PrevKv.Key), string(putResp.PrevKv.Value))
@@ -148,13 +148,13 @@ func (s *SetInfo) Load() (err error) {
 	}
 
 	for _, kvpair = range getResp.Kvs {
-		log.Printf("HeightSet Add [%s]=%s\n", string(kvpair.Key), string(kvpair.Value))
+		// log.Printf("HeightSet Add [%s]=%s\n", string(kvpair.Key), string(kvpair.Value))
 		mk, err = getIdFromBase(string(kvpair.Key))
 		if err != nil || mk == 0 {
 			log.Println("HeightSet Parse key", string(kvpair.Key), " happened error:", err)
 			continue
 		}
-		log.Printf("HeightSet Add (%d)", mk)
+		// log.Printf("HeightSet Add (%d)", mk)
 		s.set.Add(mk)
 	}
 

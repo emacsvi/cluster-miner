@@ -56,13 +56,13 @@ func (s *SectorMgrInfo) loopWatch() (err error) {
 	}
 
 	for _, kvpair = range getResp.Kvs {
-		log.Printf("Add [%s]=%s\n", string(kvpair.Key), string(kvpair.Value))
+		// log.Printf("Add [%s]=%s\n", string(kvpair.Key), string(kvpair.Value))
 		mk, err = getIdFromBase(string(kvpair.Key))
 		if err != nil || mk == 0 {
 			log.Println("Parse key", string(kvpair.Key), " happened error:", err)
 			continue
 		}
-		log.Printf("Add [%d]=%s\n", mk, filepath.Join(s.nfs, string(kvpair.Value)))
+		// log.Printf("Add [%d]=%s\n", mk, filepath.Join(s.nfs, string(kvpair.Value)))
 		s.M[mk] = filepath.Join(s.nfs, string(kvpair.Value))
 	}
 
