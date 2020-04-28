@@ -56,6 +56,10 @@ const (
 	// save block height number
 	// /xjgw/height/t02112/72156 => 1
 	BLOCK_HEIGHT_PREFIX = "/xjgw/height/"
-	KVSTORE_PREFIX      = "/xjgw/kvstore/"
-	COMMP_PREFIX        = "/xjgw/kvstore/commp/"
+	//KVSTORE_PREFIX      = "/xjgw/kvstore/"
+	//COMMP_PREFIX        = "/xjgw/kvstore/commp/"
+
+	// 保存元数据
+	// [/xjgw/metas/t03294/5 => [byte of struct]]
+	SECTORS_META_PREFIX = "/xjgw/metas/"
 )
